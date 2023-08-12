@@ -2,7 +2,7 @@ import React from 'react';
 
 const Trusteby = () => {
     return (
-        <div className="">
+        <div className="bg-gray-100 p-5 max-w-screen-xl mx-auto">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
            <div className='text-center'>
 
@@ -11,7 +11,7 @@ const Trusteby = () => {
             <p className='max-w-screen-md mx-auto my-12'>Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
            </div>
             <div className="mt-6">
-                <ul className="flex gap-x-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
+                <ul className="grid gap-x-10 gap-y-6 lg:grid-cols-6 sm:grid-cols-4  items-center justify-center md:gap-x-16">
                     {/* LOGO 1 */}
                   <li>
                   <svg xmlns="http://www.w3.org/2000/svg" width="129" height="32" viewBox="0 0 129 32" fill="none">

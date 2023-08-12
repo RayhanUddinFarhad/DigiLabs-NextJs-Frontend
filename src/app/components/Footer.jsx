@@ -58,7 +58,7 @@ const Footer = () => {
 
 
 
-            <div className="flex-1  space-y-6 items-center justify-around sm:flex md:space-y-0 md:mt-0">
+            <div className="flex-1 mb-3 lg:mb-0    items-center justify-around flex  md:space-y-0 md:mt-0">
                     {
                         footerNavs.map((item, idx) => (
                             <ul
@@ -85,7 +85,7 @@ const Footer = () => {
                         ))
                     }
                 </div>
-                <div className="ml-5">
+                <div className="lg:ml-5">
                     <div className="max-w-xs">
                         <h4 className='font-bold text-sm'>Get Enail Notification</h4>
                         <p className="leading-relaxed mt-2 text-[#A5ACBA] text-[15px]">

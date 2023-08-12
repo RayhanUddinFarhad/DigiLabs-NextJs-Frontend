@@ -26,7 +26,7 @@ const Testimonal = () => {
         //         </div>
         //     </div>
         // </section>
-        <section className=''>
+        <section className='bg-gray-100 p-5 max-w-screen-xl mx-auto'>
 
             <div className='text-center lg:hidden block p-2'>
                 <h1 className='sm:text-3xl text-2xl font-bold'>What Our Customers Say</h1>
@@ -39,7 +39,7 @@ const Testimonal = () => {
            <div className='lg:text-center text-left lg:mx-auto lg:px-40 py-5 px-2 space-y-8'>
 
            <Image className='lg:mx-auto' src='assets/logo2.svg' width={128} height={32} alt=''></Image>
-            <p className='text-3xl font-semibold'>Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I {`can't`} say enough about LookScout. Great job, I will definitely be ordering again!</p>
+            <p className='lg:text-3xl text-xl font-semibold'>Thank you for making it painless, pleasant and most of all hassle free! I love LookScout. I {`can't`} say enough about LookScout. Great job, I will definitely be ordering again!</p>
 
             <div className='flex lg:justify-center'>
 

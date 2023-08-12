@@ -12,7 +12,7 @@ const Banner = () => {
 
         <div className="bg-[#3971E7]">
 
-            <section className="pt-10 mx-auto max-w-screen-2xl pb-12 px-4 items-center flex lg:flex-row flex-wrap-reverse  justify-center md:px-8">
+            <section className="pt-10 mx-auto max-w-screen-2xl pb-12 px-4 items-center flex lg:flex-row flex-col-reverse  justify-center md:px-8">
                 <div className="space-y-4 flex-1 sm:text-center lg:text-left">
                     <h1 className="text-white font-bold text-4xl xl:text-5xl">
                         Your Supercharged      <br />                Design Workflow
