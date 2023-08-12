@@ -6,6 +6,7 @@ import ProductFeatures2 from './components/ProductFeatures2'
 import Testimonal from './components/Testimonal'
 import Blogs from './components/Blogs'
 import Trusteby from './components/Trusteby'
+import CallToAction from './components/CallToAction'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
      <Testimonal></Testimonal>
      <Blogs></Blogs>
      <Trusteby></Trusteby>
+     <CallToAction></CallToAction>
     </main>
   )
 }
