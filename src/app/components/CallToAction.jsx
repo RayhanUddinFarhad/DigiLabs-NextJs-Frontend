@@ -19,7 +19,7 @@ const CallToAction = () => {
                         className="text-gray-500 w-full p-3 rounded-md border outline-none focus:border-indigo-600"
                     />
                     <button
-                        className="btn-primary w-full"
+                        className="btn-primary w-full lg:w-auto"
                     >
                         Submit
                     </button>

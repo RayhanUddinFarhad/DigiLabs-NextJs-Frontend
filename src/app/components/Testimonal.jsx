@@ -26,7 +26,8 @@ const Testimonal = () => {
         //         </div>
         //     </div>
         // </section>
-        <section className='bg-gray-100 p-5 max-w-screen-xl mx-auto'>
+        <section  data-aos= "flip-down"
+        data-aos-duration="1000" className='bg-gray-100 p-5 max-w-screen-xl mx-auto'>
 
             <div className='text-center lg:hidden block p-2'>
                 <h1 className='sm:text-3xl text-2xl font-bold'>What Our Customers Say</h1>

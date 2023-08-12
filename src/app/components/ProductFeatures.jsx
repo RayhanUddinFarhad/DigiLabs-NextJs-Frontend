@@ -45,7 +45,8 @@ const ProductFeatures = () => {
             <div className="max-w-screen-xl mx-auto px-4 text-gray-600 gap-16 justify-between md:px-8 flex md:flex-row flex-col-reverse">
                 <div>
                     
-                    <div className="mt-12 max-w-lg lg:max-w-none">
+                    <div data-aos= "fade-right"
+   data-aos-duration="1000" className="mt-12 max-w-lg lg:max-w-none">
                         <ul className="space-y-8">
                             {
                                 features.map((item, idx) => (
@@ -69,7 +70,8 @@ const ProductFeatures = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-12 lg:mt-0">
+                <div data-aos= "fade-left"
+   data-aos-duration="1000" className="mt-12 lg:mt-0">
                    <Image className='hidden lg:block' src="/assets/productFeature.png" width={560} height={560} alt=''></Image>
                    <Image className='block lg:hidden' src="/assets/productFeature2.png" width={560} height={560} alt=''></Image>
                 </div>

@@ -8,19 +8,19 @@ const Footer = () => {
             label: "Resources",
             items: [
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Community'
                 },
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Events'
                 },
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Hero Center'
                 },
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Partners'
                 },
             ],
@@ -29,26 +29,26 @@ const Footer = () => {
             label: "Products",
             items: [
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Integrations'
                 },
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Solutions'
                 },
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Features'
                 },
                 {
-                    href: 'javascript:void()',
+                    href: '',
                     name: 'Enterprise'
                 },
             ],
         }
     ]
     return (
-        <footer className="text-white bg-black px-4 py-10 mt-10 max-w-screen-xl mx-auto md:px-8">
+        <footer className="text-white bg-black px-4 py-10 mt-10  mx-auto md:px-8">
             <div className="gap-6  md:flex">
                 <div className='max-w-sm'>
 <Image src='/assets/lookscout.png' width={160} height={40} alt=''></Image>
@@ -95,7 +95,7 @@ const Footer = () => {
                         onSubmit={(e) => e.preventDefault()}
                     >
                       
-                        <div className="max-w-sm flex items-center  rounded-md p-1">
+                        <div className="max-w-sm flex items-center bg-[#2C3444]  rounded-md ">
                             <input 
                                 type="email"
                                 placeholder="Enter your email..."

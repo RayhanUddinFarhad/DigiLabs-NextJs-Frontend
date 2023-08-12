@@ -7,8 +7,11 @@ import Testimonal from './components/Testimonal'
 import Blogs from './components/Blogs'
 import Trusteby from './components/Trusteby'
 import CallToAction from './components/CallToAction'
+import 'aos/dist/aos.css';
+
 
 export default function Home() {
+  
   return (
     <main className='space-y-16'>
      <Banner></Banner>

@@ -39,10 +39,12 @@ const ProductFeatures2 = () => {
       
         <div className="py-14">
         <div className="max-w-screen-xl mx-auto px-4 text-[#A5ACBA] gap-16 justify-between md:px-8 flex md:flex-row flex-col-reverse">
-        <div className="mt-12 lg:mt-0">
+        <div data-aos= "fade-up"
+   data-aos-duration="1000" className="mt-12 lg:mt-0">
                <Image className='' src="/assets/productFeature2.png" width={560} height={560} alt=''></Image>
             </div>
-                <div className="mt-12 max-w-lg lg:max-w-none">
+                <div data-aos= "fade-down"
+   data-aos-duration="1000" className="mt-12 max-w-lg lg:max-w-none">
                     <ul className="space-y-8">
                         {
                             features.map((item, idx) => (
