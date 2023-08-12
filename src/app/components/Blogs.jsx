@@ -41,11 +41,11 @@ const Blogs = () => {
     ]
     
     return (
-        <section className="mt-12 mx-auto px-4 max-w-screen-xl h-[500px] md:px-8">
+        <section className="mt-12 mx-auto px-4 max-w-screen-xl  md:px-8">
             <div className="text-center">
                 <h1 className="text-3xl text-gray-800 font-semibold">
                 Latest Blog Posts                </h1>
-                <p className="mt-3 text-gray-500">
+                <p className="mt-3 text-gray-500 max-w-screen-lg mx-auto">
                 Completely synergize resource taxing relationships via premier niche markets. Professionally  cultivate one-to-one customer service with robust ideas.                </p>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

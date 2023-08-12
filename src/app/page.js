@@ -5,6 +5,7 @@ import ProductFeatures from './components/ProductFeatures'
 import ProductFeatures2 from './components/ProductFeatures2'
 import Testimonal from './components/Testimonal'
 import Blogs from './components/Blogs'
+import Trusteby from './components/Trusteby'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
      <ProductFeatures2></ProductFeatures2>
      <Testimonal></Testimonal>
      <Blogs></Blogs>
+     <Trusteby></Trusteby>
     </main>
   )
 }
