@@ -3,6 +3,7 @@ import Banner from './components/Banner'
 import Features from './components/Features'
 import ProductFeatures from './components/ProductFeatures'
 import ProductFeatures2 from './components/ProductFeatures2'
+import Testimonal from './components/Testimonal'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
      <Features></Features>
      <ProductFeatures></ProductFeatures>
      <ProductFeatures2></ProductFeatures2>
+     <Testimonal></Testimonal>
     </main>
   )
 }
