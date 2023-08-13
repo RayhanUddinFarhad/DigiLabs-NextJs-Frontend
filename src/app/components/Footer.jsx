@@ -51,7 +51,7 @@ const Footer = () => {
         <footer className="text-white bg-black px-4 py-10 mt-10  mx-auto md:px-8">
             <div className="gap-6  md:flex">
                 <div className='max-w-sm'>
-<Image src='/assets/lookscout.png' width={160} height={40} alt=''></Image>
+<Image src='/assets/Lookscout.png' width={160} height={40} alt=''></Image>
 <p className='text-[#A5ACBA] my-5'>Generate outside the box thinking with the possibility to targtet the low.</p>
                 </div>
 
