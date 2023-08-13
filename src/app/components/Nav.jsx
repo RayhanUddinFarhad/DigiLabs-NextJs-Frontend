@@ -1,7 +1,8 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../context/AuthProvider';
 
 
 const dropdownNavs = [
@@ -82,6 +83,7 @@ const Nav = () => {
 
     const [state, setState] = useState(false)
     const [drapdownState, setDrapdownState] = useState({ isActive: false, idx: null })
+    const {user, logOut} = useContext(AuthContext)
 
     // Replace  paths with your paths
     const navigation = [
@@ -196,15 +198,23 @@ const Nav = () => {
                                 })
                             }
                             <div className='flex-1 items-center justify-end gap-x-6 space-y-3 md:flex md:space-y-0'>
-                                <li>
-                                    <a href="" className="block py-3 text-center text-white hover:text-indigo-600 border rounded-lg md:border-none">
-                                        Log in
-                                    </a>
+                                <li className='text-white'>
+                                    {user?.email}
                                 </li>
                                 <li>
-                                    <Link href="/signin" className="btn-primary">
-                                        Sign in
-                                    </Link>
+                                   {
+                                    user ? <button onClick={() => logOut()} className='block py-3 px-2 text-center text-white bg-red-400 hover:text-indigo-600 border rounded-lg md:border-none'>LogOut</button> :  <Link href="/login" className="block py-3 text-center text-white hover:text-indigo-600 border rounded-lg md:border-none">
+                                    Log in
+                                </Link>
+                                   }
+                                </li>
+                                <li>
+                                    { user ? '' :
+                                         <Link href="/signin" className="btn-primary">
+                                         Sign in
+                                     </Link>
+                                    }
+                                    
                                 </li>
                             </div>
                         </ul>

@@ -1,15 +1,73 @@
 "use client"
 
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../context/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Page = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { user, signUp, googleLogin } = useContext(AuthContext)
+    const router = useRouter()
+    const [error, setError] = useState('')
+
+    console.log(user);
 
     const onSubmit = (data) => {
         // Handle form submission
+
+        const { name, email, password } = data
+
+
+
+        signUp (email, password)
+        .then (res => {
+
+            const registered = res.user
+            updateProfile(registered, {
+
+                displayName: name
+            })
+            router.push('/')
+
+
+
+
+        })
+        .catch (err => {
+            console.log(err.message);
+            setError(err.message);
+        })
         console.log(data);
     };
+
+    const handleGoogleLogin = () => {
+
+
+
+
+        googleLogin()
+            .then(res => {
+
+                const loggedInUser = res.user
+                console.log(loggedInUser);
+                router.push('/')
+
+
+
+                
+
+               
+            })
+
+            .catch(err => {
+
+                console.log(err);
+                setError(err.message)
+            })
+    }
 
     return (
         <main className="w-full h-screen flex flex-col items-center justify-center bg-gray-50 sm:px-4">
@@ -17,7 +75,7 @@ const Page = () => {
                 <div className="text-center">
                     <div className="mt-5 space-y-2">
                         <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Create an account</h3>
-                        <p className="">Already have an account? <a href="javascript:void(0)" className="font-medium text-indigo-600 hover:text-indigo-500">Log in</a></p>
+                        <p className="">Already have an account? <Link href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">Log in</Link></p>
                     </div>
                 </div>
                 <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
@@ -25,6 +83,7 @@ const Page = () => {
                         onSubmit={handleSubmit(onSubmit)}
                         className="space-y-5"
                     >
+                        <p className='text-red-500'>{error}</p>
                         <div>
                             <label className="font-medium">
                                 Name
@@ -66,7 +125,7 @@ const Page = () => {
                         </button>
                     </form>
                     <div className="mt-5">
-                        <button className="w-full flex items-center justify-center gap-x-3 py-2.5 mt-5 border rounded-lg text-sm font-medium hover:bg-gray-50 duration-150 active:bg-gray-100">
+                        <button onClick={() => handleGoogleLogin()} className="w-full flex items-center justify-center gap-x-3 py-2.5 mt-5 border rounded-lg text-sm font-medium hover:bg-gray-50 duration-150 active:bg-gray-100">
                             <svg className="w-5 h-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 {/* ... Google logo SVG ... */}
                             </svg>
