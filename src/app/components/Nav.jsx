@@ -85,7 +85,7 @@ const Nav = () => {
 
     // Replace  paths with your paths
     const navigation = [
-        { title: "Home", path: "", isDrapdown: false },
+        { title: "Home", path: "/", isDrapdown: false },
         { title: "Our Products", path: "", isDrapdown: false },
         { title: "Resources", path: "", isDrapdown: true, navs: dropdownNavs },
 
@@ -105,14 +105,14 @@ const Nav = () => {
             <nav className={`relative z-20 bg-[#2B63D9] border-b border-[#648EF7] w-full md:static md:text-sm  ${state ? "shadow-lg rounded-b-xl md:shadow-none" : ""}`}>
                 <div className="items-center gap-x-14 px-4 max-w-screen-xl mx-auto md:flex md:px-8">
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="">
+                        <Link href="/">
                             <Image
                                 src="/assets/Lookscout.png"
                                 width={120}
                                 height={50}
                                 alt="Float UI logo"
                             />
-                        </a>
+                        </Link>
                         <div className="md:hidden">
                             <button className="text-white hover:text-gray-800"
                                 onClick={() => setState(!state)}
@@ -202,9 +202,9 @@ const Nav = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" className="btn-primary">
+                                    <Link href="/signin" className="btn-primary">
                                         Sign in
-                                    </a>
+                                    </Link>
                                 </li>
                             </div>
                         </ul>
