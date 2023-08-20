@@ -59,7 +59,7 @@ const DashboardForm = () => {
         >
           <div>
             <p>{status}</p>
-            <label className="font-medium">Change header of the banner</label>
+            <label className="font-medium">Change main heading text of the banner</label>
             <input
             required
               type="text"
