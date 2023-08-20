@@ -49,12 +49,12 @@ const LogoUpdate = () => {
                   text: 'Logo has been updated. ',
                   showCancelButton: false,
                   confirmButtonText: 'OK',
-                }).then((result) => {
-                  if (result.isConfirmed) {
-                    setReloadPage(true); // Set the state to trigger page reload
-                  }
-                });
-              }
+                })
+
+                setTimeout(() => {
+                  setReloadPage(true); 
+                }, 1000); 
+              }              
   
   
   
