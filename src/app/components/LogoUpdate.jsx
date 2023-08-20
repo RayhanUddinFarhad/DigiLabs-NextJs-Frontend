@@ -25,46 +25,51 @@ const LogoUpdate = () => {
       .then(res => res.json())
       .then(data => {
 
-        console.log(data.data.display_url);
-        const imageURL = data.data.display_url
+        if (data.success) {
 
-        fetch(`https://digilabs-backend.vercel.app/image`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-
-          body: JSON.stringify({ imageURL })
-        })
-          .then(res => res.json())
-          .then(data => {
-            console.log(data)
-
-            if (data.insertedId || data.modifiedCount > 0) {
-              Swal.fire({
-                icon: 'success',
-                title: 'Good job!',
-                text: 'Logo has been updated. ',
-                showCancelButton: false,
-                confirmButtonText: 'OK',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  setReloadPage(true); // Set the state to trigger page reload
-                }
-              });
-            }
-
-
-
-
-
-
-            reset()
-
-
-
+          console.log(data?.data?.display_url
+            );
+  
+          const imageURL = data?.data?.display_url
+  
+          fetch(`https://digilabs-backend.vercel.app/image`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+  
+            body: JSON.stringify({ imageURL })
           })
-          .catch(err => { console.log(err) });
-
-
+            .then(res => res.json())
+            .then(data => {
+              console.log(data)
+  
+              if (data.insertedId || data.modifiedCount > 0) {
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Good job!',
+                  text: 'Logo has been updated. ',
+                  showCancelButton: false,
+                  confirmButtonText: 'OK',
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    setReloadPage(true); // Set the state to trigger page reload
+                  }
+                });
+              }
+  
+  
+  
+  
+  
+  
+              reset()
+  
+  
+  
+            })
+            .catch(err => { console.log(err) });
+  
+  
+         }
 
 
       })
@@ -87,7 +92,7 @@ const LogoUpdate = () => {
         <label className="font-medium">Upload logo</label>
         <input
           type="file"
-          accept='.png,  .jpg, .jpeg, .svg'
+          accept='.png,  .jpg, .jpeg'
           name="logo"
           {...register("logo", { required: true })}
           className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none  shadow-md rounded-lg"
