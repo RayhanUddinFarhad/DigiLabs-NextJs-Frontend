@@ -1,10 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output : 'export',
+    experimental: {
+    appDir: true,
+    serverComponentsExternalPackages: ["mongoose"],
+  },
 
     images: {
         domains: ['images.unsplash.com'],
-        unoptimized  : true
+        unoptimized  : true,
+
+        remotePatterns: [
+          {
+            protocol: "https",
+            hostname: "lh3.googleusercontent.com",
+          },
+          {
+            protocol: "https",
+            hostname: "i.ibb.co",
+          },
+        ],
       },
 }
 

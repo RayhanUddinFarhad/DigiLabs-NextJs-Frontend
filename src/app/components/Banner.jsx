@@ -1,14 +1,24 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
+import axios from 'axios';
 
  
 
 
 
 const Banner = () => {
+
+    const [header, setHeader] = useState()
+
+
+    axios.get('https://digilabs-backend.vercel.app/header')
+    .then(res => setHeader(res.data.header))
+    .catch(err => console.error(err));
+  
+    
     const navigation = [
         { title: "Customers", path: "javascript:void(0)" },
         { title: "Careers", path: "javascript:void(0)" },
@@ -31,7 +41,7 @@ const Banner = () => {
  className='space-y-4'>
 
                    <h1 className="text-white font-bold text-4xl xl:text-5xl">
-                        Your Supercharged      <br />                Design Workflow
+                        {header}
                     </h1>
                     <p className="text-gray-300 max-w-xl leading-relaxed sm:mx-auto lg:ml-0 ">
                         We’ve been told it is not possible to overachieve our customers’ expectations. We have not reinvented the wheel, we decided to build upon it.                    </p>

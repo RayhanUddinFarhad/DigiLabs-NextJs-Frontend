@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthProvider';
+import axios from 'axios';
 
 
 const dropdownNavs = [
@@ -80,18 +81,27 @@ const dropdownNavs = [
 ]
 
 const Nav = () => {
+    const [url, setURL] = useState('')
+
+    useEffect(() => {
+        axios.get('https://digilabs-backend.vercel.app/image')
+          .then(res => setURL(res?.data?.imageURL)) 
+          .catch(err => console.error(err));
+      }, [url]);
+    
+
 
     const [state, setState] = useState(false)
     const [drapdownState, setDrapdownState] = useState({ isActive: false, idx: null })
-    const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
-    // Replace  paths with your paths
     const navigation = [
         { title: "Home", path: "/", isDrapdown: false },
         { title: "Our Products", path: "", isDrapdown: false },
         { title: "Resources", path: "", isDrapdown: true, navs: dropdownNavs },
 
-        { title: "Contacts", path: "", isDrapdown: false }
+        { title: "Contacts", path: "", isDrapdown: false },
+        { title: "Dashboard", path: "/dashboard", isDrapdown: false }
     ]
 
     useEffect(() => {
@@ -109,7 +119,7 @@ const Nav = () => {
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link href="/">
                             <Image
-                                src="/assets/Lookscout.png"
+                                src= {url}
                                 width={120}
                                 height={50}
                                 alt="Float UI logo"
@@ -126,8 +136,8 @@ const Nav = () => {
                                         </svg>
                                     ) : (
                                         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-  <path d="M5.5 6.6665H15.5M5.5 9.99984H15.5M5.5 13.3332H15.5" stroke="white" stroke-width="1.67" stroke-linecap="round"/>
-</svg>
+                                            <path d="M5.5 6.6665H15.5M5.5 9.99984H15.5M5.5 13.3332H15.5" stroke="white" stroke-width="1.67" stroke-linecap="round" />
+                                        </svg>
 
                                     )
                                 }
@@ -160,9 +170,9 @@ const Nav = () => {
                                                         }
                                                     </button>
                                                 ) : (
-                                                    <a href={item.path} className="block text-white hover:text-indigo-600">
+                                                    <Link href={item.path} className="block text-white hover:text-indigo-600">
                                                         {item.title}
-                                                    </a>
+                                                    </Link>
                                                 )
                                             }
                                             {
@@ -202,19 +212,19 @@ const Nav = () => {
                                     {user?.email}
                                 </li>
                                 <li>
-                                   {
-                                    user ? <button onClick={() => logOut()} className='block py-3 px-2 text-center text-white bg-red-400 hover:text-indigo-600 border rounded-lg md:border-none'>LogOut</button> :  <Link href="/login" className="block py-3 text-center text-white hover:text-indigo-600 border rounded-lg md:border-none">
-                                    Log in
-                                </Link>
-                                   }
+                                    {
+                                        user ? <button onClick={() => logOut()} className='block py-3 px-2 text-center text-white bg-red-400 hover:text-indigo-600 border rounded-lg md:border-none'>LogOut</button> : <Link href="/login" className="block py-3 text-center text-white hover:text-indigo-600 border rounded-lg md:border-none">
+                                            Log in
+                                        </Link>
+                                    }
                                 </li>
                                 <li>
-                                    { user ? '' :
-                                         <Link href="/signin" className="btn-primary">
-                                         Sign in
-                                     </Link>
+                                    {user ? '' :
+                                        <Link href="/signin" className="btn-primary">
+                                            Sign in
+                                        </Link>
                                     }
-                                    
+
                                 </li>
                             </div>
                         </ul>
