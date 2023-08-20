@@ -101,7 +101,7 @@ const Nav = () => {
         { title: "Resources", path: "", isDrapdown: true, navs: dropdownNavs },
 
         { title: "Contacts", path: "", isDrapdown: false },
-        { title: "Dashboard", path: "/dashboard", isDrapdown: false }
+        { title: "Admin Panel", path: "/dashboard",  isDrapdown: false }
     ]
 
     useEffect(() => {
@@ -170,7 +170,7 @@ const Nav = () => {
                                                         }
                                                     </button>
                                                 ) : (
-                                                    <Link href={item.path} className="block text-white hover:text-indigo-600">
+                                                    <Link href={item.path} className="block text-white ">
                                                         {item.title}
                                                     </Link>
                                                 )

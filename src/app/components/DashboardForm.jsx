@@ -59,7 +59,7 @@ const DashboardForm = () => {
         >
           <div>
             <p>{status}</p>
-            <label className="font-medium">Change h1 header</label>
+            <label className="font-medium">Change header of the banner</label>
             <input
               type="text"
               name="header"
@@ -70,7 +70,7 @@ const DashboardForm = () => {
           <button
             className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
           >
-            submit
+            Change
           </button>
         </form>
 

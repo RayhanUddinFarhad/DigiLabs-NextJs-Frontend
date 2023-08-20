@@ -120,7 +120,7 @@ const Footer = () => {
                 </div>
                 <div className="lg:ml-5">
                     <div className="max-w-xs">
-                        <h4 className='font-bold text-sm'>Get Enail Notification</h4>
+                        <h4 className='font-bold text-sm'>Get Email Notification</h4>
                         <p className="leading-relaxed mt-2 text-[#A5ACBA] text-[15px]">
                             Generate outside the box thinking with the possibility to targtet the low                        </p>
                     </div>

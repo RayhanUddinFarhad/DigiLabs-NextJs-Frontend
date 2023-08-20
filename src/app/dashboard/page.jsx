@@ -8,7 +8,7 @@ const page = () => {
         <>
 
 
-       <div className='grid lg:grid-cols-2 p-10'>
+       <div className='grid lg:grid-cols-2 p-10 gap-y-10 lg:gap-y-0'>
 
 
 
