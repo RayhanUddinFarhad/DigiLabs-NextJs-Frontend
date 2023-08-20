@@ -16,7 +16,7 @@ const DashboardTable = () => {
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
             <div className="max-w-lg">
                 <h3 className="text-gray-800 text-xl font-bold sm:text-2xl">
-                    Subscribers            </h3>
+                    Subscribers  ({email?.length})          </h3>
                 <p className="text-gray-600 mt-2">
 Here is the all email of subscribers!                </p>
             </div>

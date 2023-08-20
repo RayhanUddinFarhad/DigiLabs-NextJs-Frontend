@@ -1,14 +1,20 @@
 "use client"
 import axios from 'axios';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 
 const Footer = () => {
     const { register, handleSubmit, reset } = useForm();
 
+    const [url, setURL] = useState('')
 
+    useEffect(() => {
+        axios.get('https://digilabs-backend.vercel.app/image')
+          .then(res => setURL(res?.data?.imageURL)) 
+          .catch(err => console.error(err));
+      }, []);
 
     const handleEmailSubmit = (data) => { 
 
@@ -84,7 +90,7 @@ const Footer = () => {
         <footer className="text-white bg-black px-4 py-10 mt-10  mx-auto md:px-8">
             <div className="gap-6  md:flex">
                 <div className='max-w-sm'>
-                    <Image src='/assets/Lookscout.png' width={160} height={40} alt=''></Image>
+                    <Image src={url} width={160} height={40} alt=''></Image>
                     <p className='text-[#A5ACBA] my-5'>Generate outside the box thinking with the possibility to targtet the low.</p>
                 </div>
 
@@ -132,6 +138,7 @@ const Footer = () => {
                             
                             <input
                                 type="email"
+                                required
                                 placeholder="Enter your email..."
                                 {...register("email", { required: true, maxLength: 50 })}
 

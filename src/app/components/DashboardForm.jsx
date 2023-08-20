@@ -61,6 +61,7 @@ const DashboardForm = () => {
             <p>{status}</p>
             <label className="font-medium">Change header of the banner</label>
             <input
+            required
               type="text"
               name="header"
               {...register("header", { required: true, maxLength: 50 })}

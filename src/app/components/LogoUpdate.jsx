@@ -92,6 +92,7 @@ const LogoUpdate = () => {
         <label className="font-medium">Upload logo</label>
         <input
           type="file"
+          required
           accept='.png,  .jpg, .jpeg'
           name="logo"
           {...register("logo", { required: true })}

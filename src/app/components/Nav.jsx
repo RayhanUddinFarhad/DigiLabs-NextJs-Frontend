@@ -87,7 +87,7 @@ const Nav = () => {
         axios.get('https://digilabs-backend.vercel.app/image')
           .then(res => setURL(res?.data?.imageURL)) 
           .catch(err => console.error(err));
-      }, [url]);
+      }, []);
     
 
 
